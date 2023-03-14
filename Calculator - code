@@ -1,0 +1,108 @@
+import tkinter
+import math
+import time
+
+window = tkinter.Tk()
+window.title('CALCULATOR')
+label = tkinter.Label(window, text = 'CALCULATOR', fg = 'black')
+label.grid(column = 0, row = 0)
+label2 = tkinter.Label(window, text = 'Please inter a number', fg = 'black')
+label2.grid(column = 0, row = 1)
+floatry = tkinter.Entry(window)
+floatry.grid(column = 0, row = 2)
+floatry2 = tkinter.Entry(window)
+floatry2.grid(column = 0, row = 3)
+answer = tkinter.Label(window, text = '', fg = 'black')
+answer.grid(column = 0, row = 4)
+def addition():
+    sum = float(floatry.get())+float(floatry2.get())
+    answer.configure(text = str(sum))
+def subract():
+    difference = float(floatry.get())-float(floatry2.get())
+    answer.configure(text = str(difference))
+def multiply():
+    product = float(floatry.get())*float(floatry2.get())
+    answer.configure(text = str(product))
+def divide():
+    quotifloat = float(floatry.get())/float(floatry2.get())
+    answer.configure(text = str(quotifloat))
+def logarithm():
+    log = math.log(float(floatry.get()))
+    answer.configure(text = str(log))
+def power():
+    power = math.pow(float(floatry.get()), float(floatry2.get()))
+    answer.configure(text = str(power))
+def sqrt():
+    sqrt = math.sqrt(float(floatry.get()))
+    answer.configure(text = str(sqrt))
+def factorial():
+    fact = math.factorial(int(floatry.get()))
+    answer.configure(text = str(fact))
+def hypotenuse():
+    hypot = math.hypot(float(floatry.get()), float(floatry2.get()))
+    answer.configure(text = str(hypot))
+def remainder():
+    r = math.remainder(float(floatry.get()), float(floatry2.get()))
+    answer.configure(text = str(r))
+def sine():
+    sin = math.sin(float(floatry.get()))
+    answer.configure(text = str(sin))
+def cosine():
+    cos = math.cos(float(floatry.get()))
+    answer.configure(text = str(cos))
+def tangent():
+    tan = math.tan(float(floatry.get()))
+    answer.configure(text = str(tan))
+def cosecant():
+    cosec = 1/(math.sin(float(floatry.get())))
+    answer.configure(text = str(cosec))
+def secant():
+    sec = 1/(math.cos(float(floatry.get())))
+    answer.configure(text = str(sec))
+def cotangant():
+    cot = 1/(math.tan(float(floatry.get())))
+    answer.configure(text = str(cot))
+def gcf():
+    gcd = math.gcd(int(floatry.get()))
+    answer.configure(text = str(gcd))
+def percentage():
+    percfloatage = float(floatry.get())%float(floatry2.get())
+    answer.configure(text = percfloatage)
+add_btn = tkinter.Button(window, text = '+', fg = 'blue', bg = 'black', command = addition, width = 5)
+add_btn.grid(column = 2, row = 1)
+subract_btn = tkinter.Button(window, text = '-', fg = 'blue', bg = 'black', command = subract, width = 5)
+subract_btn.grid(column = 3, row = 1)
+multiply_btn = tkinter.Button(window, text = 'x', fg = 'blue', bg = 'black', command = multiply, width = 5)
+multiply_btn.grid(column = 4, row = 1)
+divide_btn = tkinter.Button(window, text = '/', fg = 'blue', bg = 'black', command = divide, width = 5)
+divide_btn.grid(column = 5, row = 1)
+log_btn = tkinter.Button(window, text = 'Log', fg = 'blue', bg = 'black', command = logarithm, width = 5)
+log_btn.grid(column = 2, row = 2)
+power_btn = tkinter.Button(window, text = '^', fg = 'blue', bg = 'black', command = power, width = 5)
+power_btn.grid(column = 3, row = 2)
+sqrt_btn = tkinter.Button(window, text = 'root', fg = 'blue', bg = 'black', command = sqrt, width = 5)
+sqrt_btn.grid(column = 4, row = 2)
+fact_btn = tkinter.Button(window, text = '!', fg = 'blue', bg = 'black', command = factorial, width = 5)
+fact_btn.grid(column = 5, row = 2)
+hypot_btn = tkinter.Button(window, text = 'hypotenuse', fg = 'blue', bg = 'black', command = hypotenuse, width = 5)
+hypot_btn.grid(column = 2, row = 3)
+remainder_btn = tkinter.Button(window, text = 'Remainder', fg = 'blue', bg = 'black', command = remainder, width = 5)
+remainder_btn.grid(column = 3, row = 3)
+sine_btn = tkinter.Button(window, text = 'Sine', fg = 'blue',bg = 'black', command = sine, width = 5)
+sine_btn.grid(column = 4, row = 3)
+cos_btn = tkinter.Button(window, text = 'Cos', fg = 'blue',bg = 'black', command = cosine, width = 5)
+cos_btn.grid(column = 5, row = 3)
+tan_btn = tkinter.Button(window, text = 'Tan', fg = 'blue',bg = 'black', command = tangent, width = 5)
+tan_btn.grid(column = 2, row = 4)
+cosec_btn = tkinter.Button(window, text = 'Cosec', fg = 'blue',bg = 'black', command = cosecant, width = 5)
+cosec_btn.grid(column = 3, row = 4)
+sec_btn = tkinter.Button(window, text = 'Sec', fg = 'blue',bg = 'black', command = secant, width = 5)
+sec_btn.grid(column = 4, row = 4)
+cot_btn = tkinter.Button(window, text = 'Cot', fg = 'blue',bg = 'black', command = cotangant, width = 5)
+cot_btn.grid(column = 5, row = 4)
+gcd_btn = tkinter.Button(window, text = 'GCD', fg = 'blue', bg = 'black', command = gcf, width = 5)
+gcd_btn.grid(column = 2, row = 5)
+percfloat_btn = tkinter.Button(window, text = '%', fg = 'blue', bg = 'black', command = percentage, width = 5)
+percfloat_btn.grid(column = 3, row = 5)
+window.geometry('300x200')
+window.mainloop()
